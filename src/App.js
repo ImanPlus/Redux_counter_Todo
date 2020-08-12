@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Counter from './Component/Counter';
+import TodoInput from "./Component/Todo/TodoInput";
+import TodoList from "./Component/Todo/TodoList";
+import './css/style.css';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from "./Actions/Todo";
 
-function App() {
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Counter/>
+      <h1>TODOS</h1>
+      <TodoInput addTodo={props.actions.addTodo}/>
+      <TodoList todos={props.todos}/>
     </div>
   );
 }
+function mapStateToProps(state) {
+  return{
+    todos: state.todoRDS.todos,
+  }
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App)
 
-export default App;
