@@ -1,3 +1,10 @@
+********* Content This Project *********
+1- Normal counter
+2- Counter using HOOK (useSelector, useDispatch)
+3- Add TODO
+4_ List of Todos
+****************************************
+ 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
