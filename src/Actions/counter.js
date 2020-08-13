@@ -1,10 +1,10 @@
 export const INCREMENT = 'INCREMENT';
-export const DECREASE = 'DECREASE';
+export const DECREMENT = 'DECREMENT';
 
 export function increaseCount() {
   return ({type: INCREMENT})
 }
 
 export function decreaseCount() {
-  return ({type: DECREASE})
+  return ({type: DECREMENT})
 }
