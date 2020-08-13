@@ -1,4 +1,4 @@
-import {INCREMENT, DECREASE} from '../Actions/counter'
+import {INCREMENT, DECREMENT} from '../Actions/counter'
 
 const intialState = {
   count: 0,
@@ -15,7 +15,7 @@ export default function counterRDS(state = intialState, action) {
   switch (action.type) {
     case INCREMENT:
       return handleChange(state, 1)
-    case DECREASE:
+    case DECREMENT:
       return handleChange(state, -1)
     default:
       return state
